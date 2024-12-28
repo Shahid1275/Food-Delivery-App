@@ -33,9 +33,27 @@
     border: none;
     color: #747474;
     font-weight: 500;
-    margin-top: 10px;
     padding: 1vw 2.3vw;
     background-color: #fff;
     font-size: max(1vw, 13px);
     border-radius: 50px
+}
+
+
+@media(max-width: 1025px) {
+    .header-contents {
+        max-width: 45%;
+    }
+}
+
+@media(max-width: 750px){
+    .header-contents{
+        max-width: 65%;
+    }
+    .header-contents p {
+        display: none;
+    }
+    .header-contents button{
+        padding: 6px 16px;
+    }
 }

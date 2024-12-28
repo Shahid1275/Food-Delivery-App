@@ -9,11 +9,10 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
-      <img src={assets.logo} alt="" />
+      <img className='logo' src={assets.logo} alt="" />
       <ul className='navbar-menu'>
         <li onClick={()=>setMenu('home')} className={menu==='home' ? 'active' : ''}>Home</li>
         <li onClick={()=>setMenu('menu')} className={menu==='menu' ? 'active' : ''}>Menu</li>
-        <li onClick={()=>setMenu('place-order')} className={menu==='place-order' ? 'active' : ''}>Place Order</li>
         <li onClick={()=>setMenu('about')} className={menu==='about' ? 'active' : ''}>About</li>
         <li onClick={()=>setMenu('contact')} className={menu==='contact' ? 'active' : ''}>Contact Us</li>
       </ul>
