@@ -60,6 +60,49 @@
     top: -8px;
     right: -8px;
 }
+.navbar-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-profile-dropdown {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff2ef;
+    padding: 12px 25px;
+    border: 1px solid tomato;
+    border-radius: 4px;
+    right: 0;
+    z-index: 1;
+    list-style: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-profile:hover .nav-profile-dropdown {
+    display: flex;
+}
+
+.nav-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-profile-dropdown li:hover {
+    color: tomato;
+    border-radius: 3px;
+}
+
+.nav-profile-dropdown img {
+    width: 20px;
+    height: 20px;
+}
+
 
 @media(max-width: 1025px){
     .navbar .logo{
