@@ -1,7 +1,9 @@
-import express from 'express'
-import cors from 'cors'
+import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
 import connectDB from './config/connectDB.js';
 import foodRouter from './routes/food.route.js';
+import userRouter from './routes/user.route.js';
 
 const app = express();
 
@@ -17,7 +19,8 @@ connectDB();
 
 // API
 app.use('/api/food', foodRouter);
-app.use('/images', express.static('uploads'))
+app.use('/images', express.static('uploads'));
+app.use('/api/user', userRouter);
 
 app.get('/', (req, res)=>{
     res.send("I am root!");
