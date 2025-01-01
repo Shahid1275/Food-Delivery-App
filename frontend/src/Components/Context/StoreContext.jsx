@@ -9,6 +9,8 @@ const StoreContextProider = (props)=>{
     const [cartItems, setCartItems] = useState({});
     const [token, setToken] = useState('');
     const [food_list, setFoodList] = useState([]);
+    const [search, setSearch] = useState('');
+    const [showSearch, setShowSearch] = useState(false);
 
     // Backen url
     const url = 'http://localhost:3100';
@@ -46,7 +48,7 @@ const StoreContextProider = (props)=>{
 
     const fetchFoodList = async () =>{
         const response = await axios.get(url + '/api/food/list');
-        setFoodList(response.data.data)
+        setFoodList(response.data.data);
     }
 
     const loadCartData = async (token) => {
@@ -65,9 +67,9 @@ const StoreContextProider = (props)=>{
             }
         }
         loadData();
-    }, [])
+    }, []);
 
-
+    
     const contextValue = {
         food_list,
         cartItems, setCartItems,
@@ -75,6 +77,8 @@ const StoreContextProider = (props)=>{
         getTotalAmount,
         url,
         token, setToken,
+        search, setSearch,
+        showSearch, setShowSearch
     }
 
     useEffect(()=>{
