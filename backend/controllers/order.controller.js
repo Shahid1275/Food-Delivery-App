@@ -40,7 +40,7 @@ const placeOrder = async(req, res) =>{
                 product_data: {
                     name: "Delivery Charges",
                 },
-                unit_amount: deliveryCharges * 100
+                unit_amount: deliveryCharges * 100 * 275
             },
             quantity :1
         })
@@ -58,10 +58,40 @@ const placeOrder = async(req, res) =>{
         res.json({success: false, message: "Error"});
         
     }
-    
+}
 
+const verifyOrder = async (req, res) => {
+    const { orderId, success } = req.body;
+
+    try {
+        if(success == 'true'){
+            await orderModel.findByIdAndUpdate(orderId, {payment: true});
+            res.json({success: true, message: "Paid"});
+        } else {
+            await orderModel.findByIdAndDelete(orderId);
+            res.json({success: false, message: "Not Paid"});
+        }
+    } catch (error) {
+        console.log(error);
+        res.json({success: false, message:"Error"})
+        
+    }
+}
+
+// User orders for frontend
+const userOrders = async(req, res) => {
+
+    try {
+        const orders = await orderModel.find({userId: req.body.userId});
+        res.json({success: true, data: orders})
+    } catch (error) {
+        console.log(error);
+        res.json({success: false, message: "Error"})
+    }
 }
 
 export {
     placeOrder,
+    verifyOrder,
+    userOrders
 }
