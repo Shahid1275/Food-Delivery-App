@@ -10,7 +10,7 @@ import Footer from "./Components/Footer/Footer";
 import LoginPopup from "./Components/LoginPopup/LoginPopup";
 import { ToastContainer } from 'react-toastify';
 import Verify from "./Pages/Verify/Verify";
-import MyOrders from "./Pages/Myorders/Myorders";
+import MyOrders from "./Pages/MyOrders/MyOrders.jsx";
 
 const App = () => {
 
