@@ -10,7 +10,7 @@ const deliveryCharges = 250;
 
 const placeOrder = async(req, res) =>{
 
-    const frontendUrl = "http://localhost:5173";
+    const frontendUrl = "https://cooking-food-delivery.onrender.com";
 
     try {
         const newOrder = new orderModel({
