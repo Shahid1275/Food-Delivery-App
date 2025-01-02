@@ -13,7 +13,7 @@ const StoreContextProider = (props)=>{
     const [showSearch, setShowSearch] = useState(false);
 
     // Backen url
-    const url = 'http://localhost:3100';
+    const url = 'https://food-delivery-backend-cooking.onrender.com';
 
     const addToCart = async(itemId) => {
         if(!cartItems[itemId]){
