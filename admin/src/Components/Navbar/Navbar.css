@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 4%;
+    padding: 8px 6%;
 }
 
 
@@ -12,5 +12,5 @@
 }
 
 .navbar .logo {
-    width: max(10%, 80px);
+    width: max(7%, 50px);
 }

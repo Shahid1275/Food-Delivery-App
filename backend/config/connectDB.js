@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const DBConnection = 'mongodb://127.0.0.1:27017/food-delivery';
+const DBConnection = process.env.DB_CONNECTION;
 
 
 const connectDB = async () => {

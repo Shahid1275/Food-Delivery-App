@@ -4,10 +4,17 @@ import { StoreContext } from "../../Components/Context/StoreContext";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { food_list, cartItems, setCartItems, addToCart, removeFromCart, getTotalAmount, url } =
-    useContext(StoreContext);
+  const {
+    food_list,
+    cartItems,
+    setCartItems,
+    addToCart,
+    removeFromCart,
+    getTotalAmount,
+    url,
+  } = useContext(StoreContext);
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <div className="cart">
@@ -22,22 +29,25 @@ const Cart = () => {
         </div>
         <br />
         <hr />
-        {food_list.map((item, index)=>{
-          if(cartItems[item._id] > 0) {
+        {food_list.map((item, index) => {
+          if (cartItems[item._id] > 0) {
             return (
-              <div>
+              <div key={item._id}>
                 <div className="cart-items-title cart-items-item">
-                  <img src={url+'/images/'+item.image} alt="" />
+                  <img src={url + "/images/" + item.image} alt="" />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
-                  <p>${item.price*cartItems[item._id]}</p>
-                  <p onClick={()=>removeFromCart(item._id)} className="cross">X</p>
+                  <p>${item.price * cartItems[item._id]}</p>
+                  <p onClick={() => removeFromCart(item._id)} className="cross">
+                    X
+                  </p>
                 </div>
                 <hr />
               </div>
-            )
+            );
           }
+          return null; // Ensure this returns null for items not in the cart
         })}
       </div>
       <div className="cart-bottom">
@@ -58,7 +68,9 @@ const Cart = () => {
               <p>Total</p>
               <p>${getTotalAmount() === 0 ? 0 : getTotalAmount() + 2}</p>
             </div>
-            <button onClick={()=>navigate('/order')}>PROCEED TO CHECKOUT</button>
+            <button onClick={() => navigate("/order")}>
+              PROCEED TO CHECKOUT
+            </button>
           </div>
         </div>
         <div className="cart-promocode">
@@ -72,7 +84,7 @@ const Cart = () => {
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default Cart;

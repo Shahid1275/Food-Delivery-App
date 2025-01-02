@@ -1,7 +1,9 @@
 import basket_icon from './basket_icon.png'
-import logo from './logo.png'
-import header_img from './header_img.png'
+import top_logo from './top_logo.png'
+import footer_logo from './footer_logo.png'
+import header_img from './header_img.jpg'
 import search_icon from './search_icon.png'
+import new_year from './new_year.png'
 import menu_1 from './menu_1.png'
 import menu_2 from './menu_2.png'
 import menu_3 from './menu_3.png'
@@ -51,7 +53,7 @@ import app_store from './app_store.png'
 import play_store from './play_store.png'
 import linkedin_icon from './linkedin_icon.png'
 import facebook_icon from './facebook_icon.png'
-import twitter_icon from './twitter_icon.png'
+import whatsapp_icon from './whatsapp_icon.png'
 import cross_icon from './cross_icon.png'
 import selector_icon from './selector_icon.png'
 import rating_starts from './rating_starts.png'
@@ -61,7 +63,8 @@ import logout_icon from './logout_icon.png'
 import parcel_icon from './parcel_icon.png'
 
 export const assets = {
-    logo,
+    top_logo,
+    footer_logo,
     basket_icon,
     header_img,
     search_icon,
@@ -73,13 +76,14 @@ export const assets = {
     play_store,
     linkedin_icon,
     facebook_icon,
-    twitter_icon,
+    whatsapp_icon,
     cross_icon,
     selector_icon,
     profile_icon,
     logout_icon,
     bag_icon,
-    parcel_icon
+    parcel_icon,
+    new_year
 }
 
 export const menu_list = [
@@ -262,7 +266,7 @@ export const food_list = [
         category: "Cake"
     }, {
         _id: "21",
-        name: "Garlic Mushroom ",
+        name: "Garlic Mushroom",
         image: food_21,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",

@@ -1,9 +1,31 @@
 .header {
-    height: 34vw;
+    height: 36vw;
     margin: 30px auto;
-    background: url('/header_img.png') no-repeat;
+    background: url('../../assets/frontend_assets/header_img.jpg') no-repeat;
     background-size: contain;
     position: relative;
+}
+
+@keyframes blinkEffect {
+    0% {
+        background-color: #fff;
+    }
+    50% {
+        background-color: #f6ff47;
+    }
+    100% {
+        background-color: #fff;
+    }
+}
+
+.header .new-year-icon {
+    max-width: 140px; /* Adjust size as needed */
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    animation: blinkEffect 2s infinite;
 }
 
 .header-contents {
@@ -20,7 +42,7 @@
 
 .header h2 {
     font-weight: 500;
-    color: #fff;
+    color: black;
     font-size: max(4.5vw, 22px);
 }
 
@@ -29,7 +51,7 @@
     font-size: 1vw;
 }
 
-.header-contents button {
+.header-btn {
     border: none;
     color: #747474;
     font-weight: 500;
@@ -56,4 +78,11 @@
     .header-contents button{
         padding: 6px 16px;
     }
+
+    .header .new-year-icon {
+        width: 40px;
+    }
+    
 }
+
+
