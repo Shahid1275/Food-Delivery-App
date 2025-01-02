@@ -9,7 +9,7 @@ import orderRouter from './routes/order.route.js';
 
 const app = express();
 
-const PORT = 3100;
+const PORT = process.env.PORT || 3100;
 
 // middlware
 
