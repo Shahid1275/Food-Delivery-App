@@ -11,7 +11,7 @@ import { ToastContainer } from 'react-toastify';
 
 const App = () => {
 
-  const backendUrl = 'http://localhost:3100';
+  const backendUrl = 'https://food-delivery-backend-cooking.onrender.com';
 
 
   return (
