@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
-
+import React from "react";
 
 export const StoreContext = createContext(null);
 
@@ -13,7 +13,7 @@ const StoreContextProider = (props)=>{
     const [showSearch, setShowSearch] = useState(false);
 
     // Backen url
-    const url = 'https://food-delivery-backend-cooking.onrender.com';
+const url = 'http://localhost:3000';
 
     const addToCart = async(itemId) => {
         if(!cartItems[itemId]){
